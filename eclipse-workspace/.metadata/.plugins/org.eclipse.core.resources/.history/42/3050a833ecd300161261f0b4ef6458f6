@@ -1,0 +1,26 @@
+package tagger;
+
+import java.io.IOException;
+
+import edu.stanford.nlp.tagger.maxent.MaxentTagger;
+ 
+public class TagText {
+    public static void main(String[] args) throws IOException,
+            ClassNotFoundException {
+ 
+    	String current = new java.io.File( "." ).getCanonicalPath();
+        System.out.println("Current dir:"+current);
+        // Initialize the tagger
+        MaxentTagger tagger = new MaxentTagger(
+                "../../stanford-postagger-2015-12-09/models/english-bidirectional-distsim.tagger");
+ 
+        // The sample string
+        String sample = "I like that dog";
+ 
+        // The tagged string
+        String tagged = tagger.tagString(sample);
+ 
+        // Output the result
+        System.out.println(tagged);
+    }
+}

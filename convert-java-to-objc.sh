@@ -1,0 +1,1 @@
+find stanford-postagger-java/edu -name *.java -exec ./j2objc-1.2/j2objc -sourcepath stanford-postagger-java/ -d stanford-postagger-objc/ -use-arc --nullability -classpath stanford-postagger-java/lib/slf4j-api.jar {} \;

@@ -1,0 +1,4 @@
+*.class
+xcuserdata
+.DS_Store
+j2objc-1.2

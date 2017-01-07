@@ -1,0 +1,34 @@
+package tagger;
+
+import java.io.DataInputStream;
+import java.io.IOException;
+
+import edu.stanford.nlp.io.IOUtils;
+import edu.stanford.nlp.tagger.maxent.MaxentTagger;
+import edu.stanford.nlp.tagger.maxent.TaggerConfig;
+ 
+public class TagText {
+    public static void main(String[] args) throws IOException,
+            ClassNotFoundException {
+    	
+    	String modelFileOrUrl = 
+ 
+        // first check can open file ... or else leave with exception
+        DataInputStream rf = new DataInputStream(IOUtils.getInputStreamFromURLOrClasspathOrFileSystem(modelFileOrUrl));
+
+        TaggerConfig taggerConfig = TaggerConfig.readConfig(rf);
+
+    	
+        // Initialize the tagger
+        MaxentTagger tagger = new MaxentTagger(modelFileOrUrl);
+ 
+        // The sample string
+        String sample = "I like that dog";
+ 
+        // The tagged string
+        String tagged = tagger.tagString(sample);
+ 
+        // Output the result
+        System.out.println(tagged);
+    }
+}
