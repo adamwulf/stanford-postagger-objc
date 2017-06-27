@@ -34,6 +34,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jhj-SF-K5D">
+                                <rect key="frame" x="36" y="245" width="303" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Hyw-7O-eFu"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -42,12 +51,16 @@
                             <constraint firstItem="ZpY-mO-oLf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Krb-3I-v0Z"/>
                             <constraint firstItem="QZG-QF-yXb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LeV-et-eOn"/>
                             <constraint firstItem="QZG-QF-yXb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="40" id="Tf4-OI-b4W"/>
+                            <constraint firstItem="ZpY-mO-oLf" firstAttribute="leading" secondItem="Jhj-SF-K5D" secondAttribute="leading" id="UIB-ei-QHG"/>
+                            <constraint firstItem="ZpY-mO-oLf" firstAttribute="top" secondItem="Jhj-SF-K5D" secondAttribute="bottom" constant="8.5" id="dUD-e2-BYw"/>
                             <constraint firstItem="ZpY-mO-oLf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fQj-Ac-Vd1"/>
+                            <constraint firstItem="ZpY-mO-oLf" firstAttribute="trailing" secondItem="Jhj-SF-K5D" secondAttribute="trailing" id="pfL-ji-VDu"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="spinner" destination="QZG-QF-yXb" id="1wB-ld-qP5"/>
                         <outlet property="taggedLbl" destination="ZpY-mO-oLf" id="1wm-Os-A9T"/>
+                        <outlet property="textInput" destination="Jhj-SF-K5D" id="eRK-NJ-mkw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

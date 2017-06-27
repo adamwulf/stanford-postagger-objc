@@ -10,28 +10,46 @@
 #import <Foundation/Foundation.h>
 #import <StanfordPostaggerObjc/StanfordPostaggerObjc.h>
 
-@interface ViewController ()
+@interface ViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, readwrite) IBOutlet UIActivityIndicatorView* spinner;
+@property (nonatomic, readwrite) IBOutlet UITextField* textInput;
 @property (nonatomic, readwrite) IBOutlet UILabel* taggedLbl;
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    SimpleTagger* tagger;
+}
 
 -(void) viewDidAppear:(BOOL)animated{
     
     _taggedLbl.text = @"Initializing Tagger...";
     
+    _textInput.text = @"The quick brown fox jumped over the lazy dog.";
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        SimpleTagger* tagger = [[SimpleTagger alloc] init];
+        tagger = [[SimpleTagger alloc] init];
         dispatch_async(dispatch_get_main_queue(), ^{
+            [_textInput setHidden:NO];
             [_spinner stopAnimating];
-            _taggedLbl.text = [tagger tag:@"The quick brown fox jumped over the lazy dog."];
+            [self tagText:nil];
         });
     });
-    
 }
 
+-(IBAction)tagText:(id)sender{
+    _taggedLbl.text = [tagger tag:_textInput.text];
+}
+
+
+-(void) textFieldDidEndEditing:(UITextField *)textField{
+    [self tagText:nil];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self tagText:nil];
+    return YES;
+}
 
 @end
