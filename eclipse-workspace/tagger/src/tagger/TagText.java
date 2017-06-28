@@ -20,7 +20,8 @@ public class TagText {
     	// TaggerConfig.readConfig() uses serialization to read the file.
         DataInputStream rf = new DataInputStream(IOUtils.getInputStreamFromURLOrClasspathOrFileSystem(modelFileOrUrl));
         TaggerConfig taggerConfig = TaggerConfig.readConfig(rf);
-
+        taggerConfig.setProperty("outputFormat", "none");
+        		
         // Print to console if it works
         if(taggerConfig == null){
             System.out.println("Error - could not read model file");
