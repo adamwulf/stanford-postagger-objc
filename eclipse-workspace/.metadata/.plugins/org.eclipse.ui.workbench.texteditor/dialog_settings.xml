@@ -2,16 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ZZ_ACTION_PACKED_0" key="selection"/>
+		<item value="toString" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="toString"/>
+			<item value="tostring"/>
+			<item value="tokenizeText"/>
+			<item value="tabbedEntities"/>
+			<item value="runTagger"/>
+			<item value="main"/>
 			<item value="ZZ_ACTION_PACKED_0"/>
 			<item value="zz_action"/>
-			<item value="getInputStreamFromURL"/>
-			<item value="readobject"/>
 		</list>
 		<list key="replacehistory">
 		</list>
