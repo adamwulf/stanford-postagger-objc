@@ -2,6 +2,7 @@ package tagger;
 
 import java.io.DataInputStream;
 import java.io.IOException;
+import java.util.Properties;
 
 import edu.stanford.nlp.io.IOUtils;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
@@ -31,7 +32,10 @@ public class TagText {
     	
         // Now, on to the larger test - can we tag text?
         // Initialize the tagger
-        MaxentTagger tagger = new MaxentTagger(modelFileOrUrl);
+        Properties p = new Properties();
+        p.setProperty("outputFormat", "none");
+        
+        MaxentTagger tagger = new MaxentTagger(modelFileOrUrl, p);
  
         // The sample string
         String sample = "This is a sample text";
