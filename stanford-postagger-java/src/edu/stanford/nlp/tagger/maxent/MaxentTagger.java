@@ -1307,9 +1307,7 @@ public class MaxentTagger extends Tagger implements ListProcessor<List<? extends
       }
 
       // TODO: there is another almost identical block of code elsewhere.  Refactor
-      if (config.getOutputFormat().equalsIgnoreCase(OUTPUTFORMAT.NONE)){
-    	  
-      }else if (config.getNThreads() != 1) {
+      if (config.getNThreads() != 1) {
         MulticoreWrapper<List<? extends HasWord>, List<? extends HasWord>> wrapper = new MulticoreWrapper<>(config.getNThreads(), new SentenceTaggingProcessor(tagger, outputLemmas));
         for (List<? extends HasWord> sentence : sentences) {
           wrapper.put(sentence);

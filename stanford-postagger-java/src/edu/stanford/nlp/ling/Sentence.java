@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import edu.stanford.nlp.util.XMLUtils;
+
 /**
  * Sentence holds a couple utility methods for lists.
  * Those include a method that nicely prints a list and methods that
@@ -177,16 +179,16 @@ public class Sentence {
    *                  in TaggedWord, etc
    */
   public static <T> String listToString(List<T> list, final boolean justValue,
-                                        final String separator) {
-    StringBuilder s = new StringBuilder();
-    for (Iterator<T> wordIterator = list.iterator(); wordIterator.hasNext();) {
-      T o = wordIterator.next();
-      s.append(wordToString(o, justValue, separator));
-      if (wordIterator.hasNext()) {
-        s.append(' ');
-      }
-    }
-    return s.toString();
+		  final String separator) {
+	  StringBuilder s = new StringBuilder();
+	  for (Iterator<T> wordIterator = list.iterator(); wordIterator.hasNext();) {
+		  T o = wordIterator.next();
+		  s.append(wordToString(o, justValue, separator));
+		  if (wordIterator.hasNext()) {
+			  s.append(' ');
+		  }
+	  }
+	  return s.toString();
   }
 
 

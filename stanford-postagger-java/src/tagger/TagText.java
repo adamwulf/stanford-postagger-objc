@@ -7,6 +7,7 @@ import java.util.Properties;
 import edu.stanford.nlp.io.IOUtils;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 import edu.stanford.nlp.tagger.maxent.TaggerConfig;
+import edu.stanford.nlp.tagger.maxent.MaxentTagger.OutputStyle;
  
 public class TagText {
     public static void main(String[] args) throws IOException,
@@ -33,7 +34,7 @@ public class TagText {
         // Now, on to the larger test - can we tag text?
         // Initialize the tagger
         Properties p = new Properties();
-        p.setProperty("outputFormat", "none");
+        p.setProperty("outputFormat", "none"); // slashTags
         
         MaxentTagger tagger = new MaxentTagger(modelFileOrUrl, p);
  

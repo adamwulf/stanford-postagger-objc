@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="filter_imports;" key="filters_last_used"/>
-	<item value="/Users/adamwulf/word-parser/java-to-objc-project/stanford-postagger-java" key="org.eclipse.jdt.ui.last.external.project"/>
+	<item value="/Users/adamwulf/Documents/Code/kiwi/stanford-postagger-objc/stanford-postagger-java/src" key="org.eclipse.jdt.ui.last.external.project"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="2" key="layout"/>
 		<item value="true" key="group_libraries"/>
@@ -20,6 +20,11 @@
 	</section>
 	<section name="BuildPathsPropertyPage">
 		<item value="0" key="pageIndex"/>
+	</section>
+	<section name="JavaSearchPage">
+		<item value="0" key="HISTORY_SIZE"/>
+		<item value="false" key="CASE_SENSITIVE"/>
+		<item value="11" key="INCLUDE_MASK"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>
